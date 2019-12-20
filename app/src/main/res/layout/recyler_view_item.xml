@@ -13,7 +13,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/txtCat"
+        android:textSize="24dp"
+        android:text="ID"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/txtLib"
+        android:textSize="24dp"
+        android:text="ID"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtMarque"
         android:textSize="24dp"
         android:text="ID"/>
     <TextView

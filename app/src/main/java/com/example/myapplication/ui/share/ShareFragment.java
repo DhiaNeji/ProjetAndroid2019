@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -20,6 +21,13 @@ import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ShareFragment extends Fragment {
 
@@ -46,15 +54,32 @@ public class ShareFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        liste.add(new Produit("xx","aa","zz"));
-        liste.add(new Produit("cc","qdsy","yqdsy"));
-        liste.add(new Produit("aca","aaa","aaxw"));
+
+        Retrofit rf=new Retrofit.Builder().baseUrl("http://192.168.1.6/").addConverterFactory(GsonConverterFactory.create()).build();
+        ApiMaquillageHandler api=rf.create(ApiMaquillageHandler.class);
+        final Call<ArrayList<Produit>> lister=api.getAllProducts();
+        lister.enqueue(new Callback<ArrayList<Produit>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Produit>> call, Response<ArrayList<Produit>> response) {
+                if(response.isSuccessful())
+                {
+                    liste=(ArrayList<Produit>) response.body();
+                    Toast.makeText(getContext(),liste.get(0).toString(),Toast.LENGTH_SHORT).show();
+                    pa=new Produit_adapter(liste,getContext());
+                    rc.setAdapter(pa);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Produit>> call, Throwable t) {
+            }
+        });
         rc=(RecyclerView)view.findViewById(R.id.rec1);
         RecyclerView.LayoutManager lm=new LinearLayoutManager(getActivity());
         rc.setLayoutManager(lm);
         DividerItemDecoration dvi=new DividerItemDecoration(rc.getContext(),DividerItemDecoration.VERTICAL);
         rc.addItemDecoration(dvi);
-        pa=new Produit_adapter(liste,getContext());
-        rc.setAdapter(pa);
+        Toast.makeText(getContext(),"liste="+liste.size(),Toast.LENGTH_SHORT).show();
+
     }
 }

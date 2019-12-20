@@ -38,7 +38,8 @@ private Context ctx;
     holder.txtRef.setText(p.getReference());
     holder.txtLib.setText(p.getLibelle());
     holder.txtPrix.setText(p.getPrix());
-
+    holder.txtCat.setText(p.getCategorie());
+    holder.txtMarque.setText(p.getMarque());
     }
 
     @Override
@@ -49,7 +50,9 @@ private Context ctx;
     public static class ProduitViewHolder extends RecyclerView.ViewHolder
 {
     TextView txtRef;
+    TextView txtCat;
     TextView txtLib;
+    TextView txtMarque;
     TextView txtPrix;
     public ProduitViewHolder(View v)
     {
@@ -57,6 +60,8 @@ private Context ctx;
         this.txtRef=v.findViewById(R.id.txtRef);
         this.txtLib=v.findViewById(R.id.txtLib);
         this.txtPrix=v.findViewById(R.id.txtPrix);
+        this.txtMarque=v.findViewById(R.id.txtMarque);
+        this.txtCat=v.findViewById(R.id.txtCat);
     }
 
 }
