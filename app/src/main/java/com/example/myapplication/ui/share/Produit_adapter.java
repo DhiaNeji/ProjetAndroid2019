@@ -37,6 +37,7 @@ private Context ctx;
     Produit p=liste.get(position);
     holder.txtLib.setText(p.getLibelle());
     holder.txtMarque.setText(p.getMarque());
+    holder.txtPrix.setText(p.getPrix()+" DT");
     }
 
     @Override
@@ -49,11 +50,13 @@ private Context ctx;
 
     TextView txtLib;
     TextView txtMarque;
+    TextView txtPrix;
     public ProduitViewHolder(View v)
     {
         super(v);
         this.txtLib=v.findViewById(R.id.txtLib);
         this.txtMarque=v.findViewById(R.id.txtMarque);
+        this.txtPrix=v.findViewById(R.id.txtPrix);
     }
 
 }

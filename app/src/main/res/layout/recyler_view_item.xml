@@ -48,7 +48,13 @@
         android:layout_gravity="center_horizontal"
         android:textSize="15dp"
         android:text="ID"/>
-
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtPrix"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="15dp"
+                    android:text="ID"/>
             </LinearLayout>
         </LinearLayout>
 
