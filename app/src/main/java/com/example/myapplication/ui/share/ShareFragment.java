@@ -1,9 +1,12 @@
 package com.example.myapplication.ui.share;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +58,6 @@ public class ShareFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         Retrofit rf=new Retrofit.Builder().baseUrl("http://192.168.1.6/").addConverterFactory(GsonConverterFactory.create()).build();
         ApiMaquillageHandler api=rf.create(ApiMaquillageHandler.class);
         final Call<ArrayList<Produit>> lister=api.getAllProducts();
@@ -64,7 +67,7 @@ public class ShareFragment extends Fragment {
                 if(response.isSuccessful())
                 {
                     liste=(ArrayList<Produit>) response.body();
-                    Toast.makeText(getContext(),liste.get(0).toString(),Toast.LENGTH_SHORT).show();
+
                     pa=new Produit_adapter(liste,getContext());
                     rc.setAdapter(pa);
                 }
