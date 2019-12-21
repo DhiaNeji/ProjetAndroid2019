@@ -35,10 +35,7 @@ private Context ctx;
     @Override
     public void onBindViewHolder(@NonNull ProduitViewHolder holder, int position) {
     Produit p=liste.get(position);
-    holder.txtRef.setText(p.getReference());
     holder.txtLib.setText(p.getLibelle());
-    holder.txtPrix.setText(p.getPrix());
-    holder.txtCat.setText(p.getCategorie());
     holder.txtMarque.setText(p.getMarque());
     }
 
@@ -49,19 +46,14 @@ private Context ctx;
 
     public static class ProduitViewHolder extends RecyclerView.ViewHolder
 {
-    TextView txtRef;
-    TextView txtCat;
+
     TextView txtLib;
     TextView txtMarque;
-    TextView txtPrix;
     public ProduitViewHolder(View v)
     {
         super(v);
-        this.txtRef=v.findViewById(R.id.txtRef);
         this.txtLib=v.findViewById(R.id.txtLib);
-        this.txtPrix=v.findViewById(R.id.txtPrix);
         this.txtMarque=v.findViewById(R.id.txtMarque);
-        this.txtCat=v.findViewById(R.id.txtCat);
     }
 
 }

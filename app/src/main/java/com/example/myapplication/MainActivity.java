@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.media.Image;
 import android.os.Bundle;
 
 import com.example.myapplication.ui.share.Produit;
@@ -24,6 +25,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
