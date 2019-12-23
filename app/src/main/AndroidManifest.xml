@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity_affichage_produit"></activity>
+        <activity android:name=".Activity_panier"></activity>
+        <activity android:name=".Activity_affichage_produit" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

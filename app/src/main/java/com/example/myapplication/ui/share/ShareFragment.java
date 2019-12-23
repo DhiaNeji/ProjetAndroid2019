@@ -58,7 +58,7 @@ public class ShareFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Retrofit rf=new Retrofit.Builder().baseUrl("http://192.168.1.6/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit rf=new Retrofit.Builder().baseUrl("http://192.168.1.5/").addConverterFactory(GsonConverterFactory.create()).build();
         ApiMaquillageHandler api=rf.create(ApiMaquillageHandler.class);
         final Call<ArrayList<Produit>> lister=api.getAllProducts();
         lister.enqueue(new Callback<ArrayList<Produit>>() {

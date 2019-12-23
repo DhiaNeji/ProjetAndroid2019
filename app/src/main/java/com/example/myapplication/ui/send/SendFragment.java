@@ -54,7 +54,7 @@ public class SendFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Retrofit rf=new Retrofit.Builder().baseUrl("http://192.168.1.6/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit rf=new Retrofit.Builder().baseUrl("http://192.168.1.5/").addConverterFactory(GsonConverterFactory.create()).build();
         ApiBeauteHandler api=rf.create(ApiBeauteHandler.class);
         final Call<ArrayList<Produit>> lister=api.getAllProducts();
         lister.enqueue(new Callback<ArrayList<Produit>>() {

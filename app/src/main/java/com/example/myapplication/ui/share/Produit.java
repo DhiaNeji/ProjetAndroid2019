@@ -7,6 +7,11 @@ public class Produit {
     private String Marque;
     private String Prix;
 
+    public Produit(String libelle, String prix) {
+        Libelle = libelle;
+        Prix = prix;
+    }
+
     @Override
     public String toString() {
         return "Produit{" +
