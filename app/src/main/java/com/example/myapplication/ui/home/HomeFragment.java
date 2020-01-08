@@ -54,7 +54,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Retrofit rf=new Retrofit.Builder().baseUrl("http://192.168.1.5/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit rf=new Retrofit.Builder().baseUrl("http://192.168.1.196/").addConverterFactory(GsonConverterFactory.create()).build();
         ApiAllHandler api=rf.create(ApiAllHandler.class);
         final Call<ArrayList<Produit>> lister=api.getAllProducts();
         lister.enqueue(new Callback<ArrayList<Produit>>() {
@@ -63,7 +63,6 @@ public class HomeFragment extends Fragment {
                 if(response.isSuccessful())
                 {
                     liste=(ArrayList<Produit>) response.body();
-                    Toast.makeText(getContext(),liste.get(0).toString(),Toast.LENGTH_SHORT).show();
                     pa=new Produit_adapter(liste,getContext());
                     rc.setAdapter(pa);
                 }
@@ -78,7 +77,6 @@ public class HomeFragment extends Fragment {
         rc.setLayoutManager(lm);
         DividerItemDecoration dvi=new DividerItemDecoration(rc.getContext(),DividerItemDecoration.VERTICAL);
         rc.addItemDecoration(dvi);
-        Toast.makeText(getContext(),"liste="+liste.size(),Toast.LENGTH_SHORT).show();
 
     }
 

@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity_panier"></activity>
+        <activity android:name=".ui.tools.CRUD_home"></activity>
+        <activity android:name=".ui.tools.Inscription_Admin" />
+        <activity android:name=".Inscription.Activity_Inscription" />
+        <activity android:name=".Authentification.Activity_Authentification" />
+        <activity android:name=".Activity_panier" />
         <activity android:name=".Activity_affichage_produit" />
         <activity
             android:name=".MainActivity"

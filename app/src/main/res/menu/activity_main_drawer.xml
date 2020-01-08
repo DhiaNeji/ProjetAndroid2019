@@ -22,5 +22,12 @@
                 android:title="@string/menu_send" />
         </menu>
     </item>
-
+    <item android:title="Administrateur">
+        <menu>
+            <item
+                android:id="@+id/nav_tools"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Paramètres" />
+        </menu>
+    </item>
 </menu>
