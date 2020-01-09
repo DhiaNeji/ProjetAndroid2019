@@ -14,13 +14,13 @@ public class Produit {
 
     @Override
     public String toString() {
-        return "Produit{" +
-                "reference='" + Reference + '\'' +
-                ", categorie='" + Categorie + '\'' +
-                ", libelle='" + Libelle + '\'' +
-                ", marque='" + Marque + '\'' +
-                ", prix='" + Prix + '\'' +
-                '}';
+        return
+                "reference='" + Reference + '\n' +
+                "categorie='" + Categorie + '\n' +
+                "libelle='" + Libelle + '\n' +
+                "marque='" + Marque + '\n' +
+                "prix='" + Prix + '\n'
+                ;
     }
 
     public String getCategorie() {
